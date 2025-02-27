@@ -1,0 +1,110 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Use a clean, readable font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; /* Dark gray text for better contrast */
+    background-color: #f8f8f8; /* Light gray background */
+}
+
+header {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the navigation links */
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px; /* Add some spacing between links */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px; /* Add some padding around the links */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+nav a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+section h2 {
+    color: #4CAF50; /* Green headings */
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light gray border for table rows */
+}
+
+th {
+    background-color: #4CAF50; /* Green table header */
+    color: white;
+}
+
+img {
+    max-width: 300px; /* Make images responsive */
+    height: auto;
+    display: block;  /* Prevents image from affecting text flow */
+    margin: 10px auto; /* Center the image */
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        text-align: center; /* Center the navigation on smaller screens */
+    }
+
+    nav li {
+        display: block; /* Stack the links vertically */
+        margin: 10px 0; /* Add vertical margin */
+    }
+
+    table {
+        display: block; /* Make the table scrollable horizontally */
+        overflow-x: auto;
+    }
+}

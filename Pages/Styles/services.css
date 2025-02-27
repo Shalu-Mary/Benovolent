@@ -1,0 +1,128 @@
+/* services.css */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.background-image { /* Style for the background image container if needed */
+  /* You can add background image or color here if you want it on the whole page */
+  /* background-image: url("your-background-image.jpg");  Example */
+  /* background-color: #f8f8f8; Example */
+  /* background-size: cover; Example */
+  /* background-position: center; Example */
+}
+
+
+header {
+  background-color: #4caf50;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+main {
+  padding: 20px;
+}
+
+#services {
+  text-align: center; /* Center the services section */
+}
+
+#services h2 {
+  margin-bottom: 20px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Spacing between grid items */
+}
+
+.service {
+  border: 1px solid #ddd; /* Light border for each service box */
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  background-color: #fff; /* White background for the service boxes*/
+}
+
+
+.service img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px; /* Slightly rounded corners for images */
+}
+
+.service h3 {
+  margin-bottom: 10px;
+}
+
+.service p {
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue button */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px; /* Add some top margin to the footer */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+footer li {
+  display: inline;
+  margin: 0 15px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Responsive Design (Media Query - Adjust breakpoint as needed) */
+@media (max-width: 768px) {
+  nav li {
+      display: block;
+      margin: 10px 0;
+  }
+
+  .service-grid {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}

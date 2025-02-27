@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer - Benevolent Beginnings</title>
+    <link rel="stylesheet" href="Styles/volunteer.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        
+        <div class="logo-container">
+            <img src="logo-removebg-preview.png" alt="Charity Logo">
+            <h1>Benevolent Beginnings</h1>
+        </div>
+        
+        <p>Making a Difference in the World</p>
+    </header>
+
+    <main>
+        <section id="volunteer-form">
+            <h2>Become a Volunteer</h2>
+            <p>Join our team and help us make a positive impact!</p>
+
+            <form action="process_volunteer.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" required><br><br>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="interests">Interests/Skills:</label>
+                <textarea id="interests" name="interests" rows="4" cols="50"></textarea><br><br>
+
+                <label for="availability">Availability:</label>
+                <textarea id="availability" name="availability" rows="4" cols="50" placeholder="Days and times you are available"></textarea><br><br>
+
+                <label for="experience">Relevant Experience:</label>
+                <textarea id="experience" name="experience" rows="4" cols="50"></textarea><br><br>
+
+                <label for="motivation">Why do you want to volunteer?</label>
+                <textarea id="motivation" name="motivation" rows="4" cols="50"></textarea><br><br>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Benevolent Beginnings - All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

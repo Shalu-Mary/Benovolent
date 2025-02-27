@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - [Charity Name]</title>
+    <link rel="stylesheet" href="Styles/donations.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <h1>Benovolent Beginings</h1>
+        <p>Making a Difference in the World</p>
+    </header>
+
+    <main>
+        <section id="donation-info">
+            <h2>Make a Donation</h2>
+            <p>Your generous contribution can make a real difference. Choose a charity below to donate to.</p>
+
+            <div class="charity-options">
+                <div class="charity">
+                    <h3>Helping Hands Trust</h3>
+                    <img src="underprivilageddonation.jpg" alt="Helping Hands">
+                    <p>Providing essential resources and support to underprivileged communities.</p>
+                    <form action="process_donation.php" method="POST">
+                        <label for="hh-amount">Amount:</label><br>
+                        <div class="amount-options">
+                            <button type="button" onclick="setAmount('hh-amount', 10)">$10</button>
+                            <button type="button" onclick="setAmount('hh-amount', 25)">$25</button>
+                            <button type="button" onclick="setAmount('hh-amount', 50)">$50</button>
+                            <input type="number" id="hh-amount" name="hh-amount" min="1" required placeholder="Custom Amount">
+                        </div><br><br>
+                        <button type="submit">Donate Now</button>
+                    </form>
+                </div>
+
+                <div class="charity">
+                    <h3>Animal Rescue League</h3>
+                    <img src="animaldonation.jpeg" alt="Animal Rescue">
+                    <p>Rescuing and rehabilitating abandoned and neglected animals.</p>
+                    <form action="process_donation.php" method="POST">
+                        <label for="arl-amount">Amount:</label><br>
+                        <div class="amount-options">
+                            <button type="button" onclick="setAmount('arl-amount', 10)">$10</button>
+                            <button type="button" onclick="setAmount('arl-amount', 25)">$25</button>
+                            <button type="button" onclick="setAmount('arl-amount', 50)">$50</button>
+                            <input type="number" id="arl-amount" name="arl-amount" min="1" required placeholder="Custom Amount">
+                        </div><br><br>
+                        <button type="submit">Donate Now</button>
+                    </form>
+                </div>
+
+                <div class="charity">
+                    <h3>Education for All</h3>
+                    <img src="educationdonation.jpeg" alt="Education for All">
+                    <p>Empowering children through access to quality education.</p>
+                    <form action="process_donation.php" method="POST">
+                        <label for="efa-amount">Amount:</label><br>
+                        <div class="amount-options">
+                            <button type="button" onclick="setAmount('efa-amount', 10)">$10</button>
+                            <button type="button" onclick="setAmount('efa-amount', 25)">$25</button>
+                            <button type="button" onclick="setAmount('efa-amount', 50)">$50</button>
+                            <input type="number" id="efa-amount" name="efa-amount" min="1" required placeholder="Custom Amount">
+                        </div><br><br>
+                        <button type="submit">Donate Now</button>
+                    </form>
+                </div>
+
+                <div class="charity">
+                    <h3>Disaster Relief Fund</h3>
+                    <img src="disasterreliefdonation.jpg" alt="Disaster Relief">
+                    <p>Providing immediate aid and long-term support to communities affected by disasters.</p>
+                    <form action="process_donation.php" method="POST">
+                        <label for="dr-amount">Amount:</label><br>
+                        <div class="amount-options">
+                            <button type="button" onclick="setAmount('dr-amount', 10)">$10</button>
+                            <button type="button" onclick="setAmount('dr-amount', 25)">$25</button>
+                            <button type="button" onclick="setAmount('dr-amount', 50)">$50</button>
+                            <input type="number" id="dr-amount" name="dr-amount" min="1" required placeholder="Custom Amount">
+                        </div><br><br>
+                        <button type="submit">Donate Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+    <script>
+        function setAmount(inputId, amount) {
+            document.getElementById(inputId).value = amount;
+        }
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="donations.css">
+</head>
+<body>
+    <main>
+        <section id="donation-info">
+            <div id="faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How can I donate?</h3>
+                    <div class="faq-answer">
+                        <p>You can donate by selecting a charity from the options above and choosing a predefined amount or entering a custom amount. Then, click the "Donate Now" button to submit your donation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What payment methods do you accept?</h3>
+                    <div class="faq-answer">
+                        <p>We currently accept credit cards, debit cards, PayPal, etc.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is my donation tax-deductible?</h3>
+                    <div class="faq-answer">
+                        <p>[Specify if donations are tax-deductible and provide any relevant information or links to documentation.]</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Where does my money go?</h3>
+                    <div class="faq-answer">
+                        <p>Your donation will go directly to the charity you select.  We are committed to transparency and ensure that your contribution is used effectively to support their mission.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How can I contact you if I have more questions?</h3>
+                    <div class="faq-answer">
+                        <p>Please visit our <a href="contact.html">Contact Us</a> page or email us at benovolentbeginnings@gmail.com.</p>
+                    </div>
+                </div>
+                </div>
+
+        </section>
+    </main>
+<script>const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            item.classList.toggle('active'); // Toggle the 'active' class
+        });
+    });</script>
+    </body>
+     <footer>
+        <p>&copy; [Benovolent] - All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
+
+</html>

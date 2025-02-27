@@ -1,31 +1,100 @@
-/* login.css */
+/* Updated login.css to match Benevolent Beginnings styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+    --primary-color: #3d8b40;
+    --primary-dark: #2E7D32;
+    --primary-darker: #246128;
+    --primary-light: #66BB6A;
+    --primary-lighter: #AED581;
+    --primary-lightest: #E8F5E9;
+    --text-dark: #333;
+    --text-medium: #666;
+    --text-light: #f8f9fa;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.08);
+    --shadow-dark: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+    --transition-speed: 0.6s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #ffffff, #AED581); /* Light green to lighter green */
+    background: linear-gradient(135deg, #f8f9fa, var(--primary-lightest));
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
+/* Logo Styling */
+.logo-section {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.logo-section a {
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container h1 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 600;
+    transition: color 0.6s ease;
+}
+
+.logo-container h1.white-text {
+    color: white;
+}
+
+.logo-container img {
+    width: 40px;
+}
+
+.logo-container h1 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Container Styling */
 .container {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: var(--shadow-dark);
     position: relative;
     overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
+    width: 850px;
+    max-width: 95%;
+    min-height: 550px;
 }
 
+/* Form Containers */
 .form-container {
     position: absolute;
     top: 0;
     height: 100%;
-    transition: all 0.6s ease-in-out;
+    transition: all var(--transition-speed) ease-in-out;
 }
 
 .register-container {
@@ -49,6 +118,7 @@ body {
     z-index: 5;
 }
 
+/* Overlay Container */
 .overlay-container {
     position: absolute;
     top: 0;
@@ -56,7 +126,7 @@ body {
     width: 50%;
     height: 100%;
     overflow: hidden;
-    transition: transform 0.6s ease-in-out;
+    transition: transform var(--transition-speed) ease-in-out;
     z-index: 100;
 }
 
@@ -65,23 +135,24 @@ body {
 }
 
 .overlay {
-    background: linear-gradient(to right, #4CAF50, #66BB6A); /* Medium green to slightly lighter medium green */
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
-    color: #fff;
+    color: var(--text-light);
     position: relative;
     left: -100%;
     height: 100%;
     width: 200%;
     transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
+    transition: transform var(--transition-speed) ease-in-out;
 }
 
 .container.right-panel-active .overlay {
     transform: translateX(50%);
 }
 
+/* Overlay Panels */
 .overlay-panel {
     position: absolute;
     display: flex;
@@ -94,7 +165,7 @@ body {
     height: 100%;
     width: 50%;
     transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
+    transition: transform var(--transition-speed) ease-in-out;
 }
 
 .overlay-left {
@@ -114,6 +185,7 @@ body {
     transform: translateX(20%);
 }
 
+/* Form Styling */
 form {
     background-color: #fff;
     display: flex;
@@ -125,100 +197,254 @@ form {
     text-align: center;
 }
 
-input {
-    background-color: #E8F5E9; /* Very light green */
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-    border-radius: 5px;
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+    font-size: 28px;
 }
 
-button {
-    border-radius: 20px;
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    color: var(--text-light);
+    font-size: 32px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.overlay-panel p {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+form p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--text-medium);
+    max-width: 300px;
+}
+
+input {
+    background-color: var(--primary-lightest);
     border: none;
-    background: linear-gradient(to right, #43A047, #66BB6A); /* Darker medium green to medium green */
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
+    border-radius: 5px;
+    padding: 14px;
+    margin: 8px 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-lighter);
+}
+
+/* Button Styling */
+button {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 45px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: transform 80ms ease-in, background-color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    margin: 15px 0;
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+button:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
 }
 
 button:hover {
-    background: linear-gradient(to right, #388E3C, #55A559); /* Slightly darker greens */
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: translateY(1px);
+    box-shadow: var(--shadow-light);
 }
 
 button.ghost {
     background-color: transparent;
-    border: 2px solid #fff;
+    border: 2px solid white;
+    border-radius: 30px;
 }
 
-h1 {
-    font-weight: bold;
-    margin: 0;
-    color: #333;
+button.ghost:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-p {
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
-    color: #666;
-}
-
+/* Social Media Icons */
 span {
-    font-size: 12px;
-}
-
-a {
-    color: #2E7D32; /* Darker green link color */
     font-size: 14px;
-    text-decoration: none;
-    margin: 15px 0;
-}
-
-a:hover {
-    text-decoration: underline;
+    color: var(--text-medium);
+    margin: 15px 0 10px;
 }
 
 .social-container {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .social {
-    border: 1px solid #A5D6A7; /* Light green border for social icons */
+    border: 1px solid var(--primary-lighter);
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px;
+    margin: 0 7px;
     height: 40px;
     width: 40px;
     text-decoration: none;
-    color: #388E3C; /* Darker green for icon color */
+    color: var(--primary-dark);
+    transition: all 0.3s ease;
 }
 
+.social:hover {
+    background-color: var(--primary-lightest);
+    transform: translateY(-2px);
+}
+
+/* Checkbox and Links */
 .content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin-bottom: 15px;
+    margin: 10px 0;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox input {
+    width: auto;
+    margin-right: 8px;
 }
 
 .checkbox label {
     font-size: 14px;
+    color: var(--text-medium);
 }
 
 .pass-link a {
+    color: var(--primary-dark);
     font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pass-link a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Added animation for floating effect */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating {
+    animation: float 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        min-height: 650px;
+    }
+    
+    .form-container {
+        width: 100%;
+    }
+    
+    .overlay-container {
+        display: none;
+    }
+    
+    .register-container {
+        left: 100%;
+    }
+    
+    .container.right-panel-active .register-container {
+        transform: translateX(-100%);
+    }
+    
+    .container.right-panel-active .login-container {
+        transform: translateX(-100%);
+    }
+    
+    form {
+        padding: 0 30px;
+    }
+    
+    .logo-section {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 20px auto;
+        text-align: center;
+    }
+    
+    .logo-container {
+        justify-content: center;
+    }
 }

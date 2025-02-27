@@ -1,6 +1,23 @@
 /* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
       
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Update these form styles */
+  .form-group input, 
+  .form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Add this line */
+  }
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;

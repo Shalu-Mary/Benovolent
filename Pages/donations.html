@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - [Charity Name]</title>
+    <title>Donate - Benevolent Beginnings</title>
     <link rel="stylesheet" href="Styles/donations.css">
 </head>
 <body>
@@ -47,9 +47,9 @@
                             <form action="process_donation.php" method="POST">
                                 <label for="hh-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 10)">$10</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 25)">$25</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 50)">$50</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 10)">Rs 100</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 25)">Rs 200</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 50)">Rs 500</button>
                                     <input type="number" id="hh-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -65,9 +65,9 @@
                             <form action="process_donation.php" method="POST">
                                 <label for="arl-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 10)">$10</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 25)">$25</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 50)">$50</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 10)">Rs 100</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 25)">Rs 200</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 50)">Rs 500</button>
                                     <input type="number" id="arl-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -83,9 +83,9 @@
                             <form action="process_donation.php" method="POST">
                                 <label for="efa-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 10)">$10</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 25)">$25</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 50)">$50</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 10)">Rs 100</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 25)">Rs 200</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 50)">Rs 500</button>
                                     <input type="number" id="efa-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -101,9 +101,9 @@
                             <form action="process_donation.php" method="POST">
                                 <label for="dr-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 10)">$10</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 25)">$25</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 50)">$50</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 10)">Rs 100</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 25)">Rs 200</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 50)">Rs 500</button>
                                     <input type="number" id="dr-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -167,6 +167,81 @@
         </ul>
     </footer>
 
+    <!-- Donation Modal Popup -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Complete Your Donation</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="donation-info">
+                    <div class="donation-summary">
+                        <span>Selected Charity:</span>
+                        <span id="selected-charity">Helping Hands Trust</span>
+                    </div>
+                    <div class="donation-summary">
+                        <span>Donation Amount:</span>
+                        <span id="donation-amount">$25.00</span>
+                    </div>
+                </div>
+                
+                <form id="donation-form">
+                    <div class="form-group">
+                        <label for="donor-name" class="required">Name</label>
+                        <input type="text" id="donor-name" name="donor-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor-phone" class="required">Phone Number</label>
+                        <input type="tel" id="donor-phone" name="donor-phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor-email" class="required">Email Address</label>
+                        <input type="email" id="donor-email" name="donor-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor-type" class="required">Donation Type</label>
+                        <select id="donor-type" name="donor-type" required>
+                            <option value="">Select donation type</option>
+                            <option value="individual">Individual Donation</option>
+                            <option value="corporate">Corporate Donation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <label class="required">Select Payment Method</label>
+                        <div class="payment-options">
+                            <button type="button" class="payment-button" data-payment="visa">
+                                <img src="../Assets/visa-cards.jpeg" alt="Visa" onerror="this.src='/api/placeholder/100/30'; this.alt='Visa Card'">
+                            </button>
+                            <button type="button" class="payment-button" data-payment="mastercard">
+                                <img src="../Assets/mastercards.png" alt="Mastercard" onerror="this.src='/api/placeholder/100/30'; this.alt='Master Card'">
+                            </button>
+                            <button type="button" class="payment-button" data-payment="paypal">
+                                <img src="../Assets/paypal.jpg" alt="PayPal" onerror="this.src='/api/placeholder/100/30'; this.alt='PayPal'">
+                            </button>
+                            <button type="button" class="payment-button" data-payment="applepay">
+                                <img src="../Assets/applepay.png" alt="Apple Pay" onerror="this.src='/api/placeholder/100/30'; this.alt='Apple Pay'">
+                            </button>
+                        </div>
+                        <input type="hidden" id="payment-method" name="payment-method" required>
+                    </div>
+                    
+                    <button type="submit" class="make-payment-btn">Make Payment</button>
+                </form>
+                
+                <div class="thank-you-message" id="thank-you-message">
+                    <h3>Thank You for Your Donation!</h3>
+                    <p>Your generosity makes a real difference. We've sent a confirmation to your email with the details of your donation.</p>
+                    <button class="back-btn" id="back-to-site">Back to Homepage</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         function setAmount(inputId, amount) {
             document.getElementById(inputId).value = amount;
@@ -197,6 +272,107 @@
                     // Toggle the clicked item
                     item.classList.toggle('active');
                 });
+            });
+
+            // Donation modal functionality
+            const modal = document.getElementById("donationModal");
+            const closeModal = document.querySelector(".close-modal");
+            const donateButtons = document.querySelectorAll(".donate-btn");
+            const donationForm = document.getElementById("donation-form");
+            const thankYouMessage = document.getElementById("thank-you-message");
+            const backToSiteBtn = document.getElementById("back-to-site");
+            const paymentButtons = document.querySelectorAll(".payment-button");
+            const paymentMethodInput = document.getElementById("payment-method");
+            
+            // Open modal when any Donate Now button is clicked
+            donateButtons.forEach(button => {
+                button.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    
+                    // Get charity name from the closest charity div
+                    const charityDiv = this.closest('.charity');
+                    const charityName = charityDiv.querySelector('h3').textContent;
+                    
+                    // Get donation amount
+                    const amountInput = charityDiv.querySelector('input[type="number"]');
+                    const amount = amountInput.value || "0";
+                    
+                    // Update modal with details
+                    document.getElementById("selected-charity").textContent = charityName;
+                    document.getElementById("donation-amount").textContent = "$" + parseFloat(amount).toFixed(2);
+                    
+                    // Show modal
+                    modal.style.display = "block";
+                    
+                    // Reset form and hide thank you message
+                    donationForm.reset();
+                    donationForm.style.display = "block";
+                    thankYouMessage.style.display = "none";
+                    
+                    // Remove selected class from payment buttons
+                    paymentButtons.forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                });
+            });
+            
+            // Close modal when clicking X
+            closeModal.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+            
+            // Close modal when clicking outside the modal content
+            window.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+            
+            // Payment method selection
+            paymentButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    // Remove selected class from all buttons
+                    paymentButtons.forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked button
+                    this.classList.add('selected');
+                    
+                    // Set payment method value in the hidden input
+                    paymentMethodInput.value = this.getAttribute('data-payment');
+                });
+            });
+            
+            // Form submission
+            donationForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const name = document.getElementById("donor-name").value;
+                const phone = document.getElementById("donor-phone").value;
+                const email = document.getElementById("donor-email").value;
+                const donorType = document.getElementById("donor-type").value;
+                const paymentMethod = paymentMethodInput.value;
+                
+                if (!name || !phone || !email || !donorType || !paymentMethod) {
+                    alert("Please fill in all required fields and select a payment method.");
+                    return;
+                }
+                
+                // Hide form and show thank you message
+                donationForm.style.display = "none";
+                thankYouMessage.style.display = "block";
+                
+                // In a real application, you would process the payment here
+                // and send the data to your server
+            });
+            
+            // Back to site button
+            backToSiteBtn.addEventListener("click", function() {
+                modal.style.display = "none";
+                // Optionally redirect to homepage
+                // window.location.href = "index.html";
             });
         });
     </script>

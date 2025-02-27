@@ -1,175 +1,295 @@
-/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+        
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #4CAF50;
-  color: #333;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header and Navigation */
-/* Navigation Bar */
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation - Sticky header with enhanced shadow */
 header {
-  background-color: white;
-  padding: 15px 0;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo-container img {
-  width: 60px;
+    width: 60px;
 }
 
 .logo-container h1 {
-  font-size: 24px;
-  color: #4CAF50; /* Green color for title */
-  margin: 0;
+    font-size: 24px;
+    color: #3d8b40;
+    margin: 0;
+    font-weight: 600;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
 }
 
 nav a {
-  text-decoration: none;
-  color: #4CAF50; /* Green text */
-  font-size: 18px;
-  padding: 8px 15px;
-  transition: color 0.3s ease;
+    text-decoration: none;
+    color: #3d8b40;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 nav a.active, nav a:hover {
-  color: #2E7D32; /* Darker green on hover */
-  border-bottom: 2px solid #2E7D32; /* Underline effect on hover */
+    color: #2E7D32;
+    border-bottom: 2px solid #2E7D32;
+    box-shadow: 0 4px 8px -4px rgba(46, 125, 50, 0.2);
 }
 
-/* Hero Section */
+/* Hero Section - More Minimalistic */
 .hero {
-  background: url('hero-image.jpg') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
+    background-color: #3d8b40;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
 }
 
 .hero-content {
-  max-width: 600px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .hero p {
-  font-size: 18px;
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    font-weight: 300;
 }
 
-/* About Section */
+/* About Section - More Clean */
 .about {
-  text-align: center;
-  padding: 50px 20px;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
 }
 
-.about h2 {
-  font-size: 30px;
-  color: #4CAF50;
+.about h2, .our-work h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #3d8b40;
+    margin-bottom: 24px;
+    font-weight: 500;
 }
 
 .about p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
-/* Mission, Vision, and Values */
+/* Mission, Vision, and Values - Horizontal alignment */
 .info-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 50px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
 }
 
 .info-box {
-  background: #E8F5E9;
-  padding: 30px;
-  border-radius: 8px;
-  width: 30%;
-  text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 4px;
+    width: 31%;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }
 
 .info-box h3 {
-  color: #2E7D32;
+    color: #3d8b40;
+    margin-top: 0;
+    font-size: 22px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.info-box h3:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #3d8b40;
 }
 
 .info-box ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
 }
 
-/* Our Work Section */
+.info-box ul li {
+    margin-bottom: 10px;
+}
+
+/* Our Work Section - Keeping as requested but modernized */
 .our-work {
-  text-align: center;
-  padding: 50px 20px;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
 }
 
 .our-work h2 {
-  font-size: 30px;
-  color: #4CAF50;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #3d8b40;
+    margin-bottom: 40px;
+    font-weight: 500;
 }
 
 .work-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .work-item {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 30%;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    border-radius: 4px;
+    width: 30%;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }
 
 .work-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.work-item-content {
+    padding: 24px;
 }
 
 .work-item h3 {
-  color: #388E3C;
-  margin: 10px 0;
+    color: #3d8b40;
+    margin-top: 0;
+    font-size: 20px;
 }
 
-/* Footer */
+.work-item p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+/* Footer - More Minimalistic */
 footer {
-  background-color: #2E7D32;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+    background-color: #2c3e50;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer p {
+    margin: 0 0 15px 0;
+    opacity: 0.8;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li a {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+footer ul li a:hover {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .info-box, .work-item {
+        width: 100%;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

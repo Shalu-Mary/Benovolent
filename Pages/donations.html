@@ -9,6 +9,10 @@
 <body>
     <header>
         <nav>
+            <div class="logo-container">
+                <img src="../Assets/logo-removebg-preview.png" alt="Benevolent Beginnings Logo">
+                <h1>Benevolent Beginnings</h1>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -17,159 +21,190 @@
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        <h1>Benovolent Beginings</h1>
-        <p>Making a Difference in the World</p>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Make a Difference Today</h2>
+            <p>Your generosity can transform lives and communities. Every contribution, no matter the size, brings hope to those who need it most.</p>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
     <main>
         <section id="donation-info">
-            <h2>Make a Donation</h2>
-            <p>Your generous contribution can make a real difference. Choose a charity below to donate to.</p>
+            <div class="container">
+                <h2>Choose Where to Donate</h2>
+                <p>Your generous contribution can make a real difference. Select a cause below that resonates with you and help us continue our mission of creating positive change.</p>
 
-            <div class="charity-options">
-                <div class="charity">
-                    <h3>Helping Hands Trust</h3>
-                    <img src="../Assets/underprivilageddonation.jpg" alt="Helping Hands">
-                    <p>Providing essential resources and support to underprivileged communities.</p>
-                    <form action="process_donation.php" method="POST">
-                        <label for="hh-amount">Amount:</label><br>
-                        <div class="amount-options">
-                            <button type="button" onclick="setAmount('hh-amount', 10)">$10</button>
-                            <button type="button" onclick="setAmount('hh-amount', 25)">$25</button>
-                            <button type="button" onclick="setAmount('hh-amount', 50)">$50</button>
-                            <input type="number" id="hh-amount" name="hh-amount" min="1" required placeholder="Custom Amount">
-                        </div><br><br>
-                        <button type="submit">Donate Now</button>
-                    </form>
-                </div>
+                <div class="charity-options">
+                    <div class="charity">
+                        <img src="../Assets/underprivilageddonation.jpg" alt="Helping Hands">
+                        <div class="charity-content">
+                            <h3>Helping Hands Trust</h3>
+                            <p>Providing essential resources and support to underprivileged communities through immediate aid and long-term development programs.</p>
+                            <form action="process_donation.php" method="POST">
+                                <label for="hh-amount">Select an amount:</label>
+                                <div class="amount-options">
+                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 10)">$10</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 25)">$25</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 50)">$50</button>
+                                    <input type="number" id="hh-amount" name="amount" min="1" placeholder="Custom" required>
+                                </div>
+                                <button type="submit" class="donate-btn">Donate Now</button>
+                            </form>
+                        </div>
+                    </div>
 
-                <div class="charity">
-                    <h3>Animal Rescue League</h3>
-                    <img src="../Assets/animaldonation.jpeg" alt="Animal Rescue">
-                    <p>Rescuing and rehabilitating abandoned and neglected animals.</p>
-                    <form action="process_donation.php" method="POST">
-                        <label for="arl-amount">Amount:</label><br>
-                        <div class="amount-options">
-                            <button type="button" onclick="setAmount('arl-amount', 10)">$10</button>
-                            <button type="button" onclick="setAmount('arl-amount', 25)">$25</button>
-                            <button type="button" onclick="setAmount('arl-amount', 50)">$50</button>
-                            <input type="number" id="arl-amount" name="arl-amount" min="1" required placeholder="Custom Amount">
-                        </div><br><br>
-                        <button type="submit">Donate Now</button>
-                    </form>
-                </div>
+                    <div class="charity">
+                        <img src="../Assets/animaldonation.jpeg" alt="Animal Rescue">
+                        <div class="charity-content">
+                            <h3>Animal Rescue League</h3>
+                            <p>Rescuing and rehabilitating abandoned and neglected animals, providing medical care, shelter, and finding loving forever homes.</p>
+                            <form action="process_donation.php" method="POST">
+                                <label for="arl-amount">Select an amount:</label>
+                                <div class="amount-options">
+                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 10)">$10</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 25)">$25</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 50)">$50</button>
+                                    <input type="number" id="arl-amount" name="amount" min="1" placeholder="Custom" required>
+                                </div>
+                                <button type="submit" class="donate-btn">Donate Now</button>
+                            </form>
+                        </div>
+                    </div>
 
-                <div class="charity">
-                    <h3>Education for All</h3>
-                    <img src="../Assets/educationdonation.jpeg" alt="Education for All">
-                    <p>Empowering children through access to quality education.</p>
-                    <form action="process_donation.php" method="POST">
-                        <label for="efa-amount">Amount:</label><br>
-                        <div class="amount-options">
-                            <button type="button" onclick="setAmount('efa-amount', 10)">$10</button>
-                            <button type="button" onclick="setAmount('efa-amount', 25)">$25</button>
-                            <button type="button" onclick="setAmount('efa-amount', 50)">$50</button>
-                            <input type="number" id="efa-amount" name="efa-amount" min="1" required placeholder="Custom Amount">
-                        </div><br><br>
-                        <button type="submit">Donate Now</button>
-                    </form>
-                </div>
+                    <div class="charity">
+                        <img src="../Assets/educationdonation.jpeg" alt="Education for All">
+                        <div class="charity-content">
+                            <h3>Education for All</h3>
+                            <p>Empowering children through access to quality education, providing school supplies, scholarships, and building learning centers in underserved areas.</p>
+                            <form action="process_donation.php" method="POST">
+                                <label for="efa-amount">Select an amount:</label>
+                                <div class="amount-options">
+                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 10)">$10</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 25)">$25</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 50)">$50</button>
+                                    <input type="number" id="efa-amount" name="amount" min="1" placeholder="Custom" required>
+                                </div>
+                                <button type="submit" class="donate-btn">Donate Now</button>
+                            </form>
+                        </div>
+                    </div>
 
-                <div class="charity">
-                    <h3>Disaster Relief Fund</h3>
-                    <img src="../Assets/disasterreliefdonation.jpg" alt="Disaster Relief">
-                    <p>Providing immediate aid and long-term support to communities affected by disasters.</p>
-                    <form action="process_donation.php" method="POST">
-                        <label for="dr-amount">Amount:</label><br>
-                        <div class="amount-options">
-                            <button type="button" onclick="setAmount('dr-amount', 10)">$10</button>
-                            <button type="button" onclick="setAmount('dr-amount', 25)">$25</button>
-                            <button type="button" onclick="setAmount('dr-amount', 50)">$50</button>
-                            <input type="number" id="dr-amount" name="dr-amount" min="1" required placeholder="Custom Amount">
-                        </div><br><br>
-                        <button type="submit">Donate Now</button>
-                    </form>
+                    <div class="charity">
+                        <img src="../Assets/disasterreliefdonation.jpg" alt="Disaster Relief">
+                        <div class="charity-content">
+                            <h3>Disaster Relief Fund</h3>
+                            <p>Providing immediate aid and long-term support to communities affected by natural disasters, including food, shelter, medical assistance, and rebuilding efforts.</p>
+                            <form action="process_donation.php" method="POST">
+                                <label for="dr-amount">Select an amount:</label>
+                                <div class="amount-options">
+                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 10)">$10</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 25)">$25</button>
+                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 50)">$50</button>
+                                    <input type="number" id="dr-amount" name="amount" min="1" placeholder="Custom" required>
+                                </div>
+                                <button type="submit" class="donate-btn">Donate Now</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
 
-   
-    <script>
-        function setAmount(inputId, amount) {
-            document.getElementById(inputId).value = amount;
-        }
-    </script>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="donations.css">
-</head>
-<body>
-    <main>
-        <section id="donation-info">
-            <div id="faq">
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="container">
                 <h2>Frequently Asked Questions</h2>
 
                 <div class="faq-item">
                     <h3 class="faq-question">How can I donate?</h3>
                     <div class="faq-answer">
-                        <p>You can donate by selecting a charity from the options above and choosing a predefined amount or entering a custom amount. Then, click the "Donate Now" button to submit your donation.</p>
+                        <p>You can donate by selecting a charity from the options above and choosing a predefined amount or entering a custom amount. Then, click the "Donate Now" button to proceed to our secure payment processing page where you can complete your donation.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <h3 class="faq-question">What payment methods do you accept?</h3>
                     <div class="faq-answer">
-                        <p>We currently accept credit cards, debit cards, PayPal, etc.</p>
+                        <p>We accept a variety of payment methods including all major credit cards (Visa, MasterCard, American Express, Discover), debit cards, PayPal, and bank transfers. All payments are processed securely to protect your information.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <h3 class="faq-question">Is my donation tax-deductible?</h3>
                     <div class="faq-answer">
-                        <p>[Specify if donations are tax-deductible and provide any relevant information or links to documentation.]</p>
+                        <p>Yes, all donations made to Benevolent Beginnings are tax-deductible to the extent allowed by law. Upon completing your donation, you will receive a receipt that you can use for tax purposes. For larger donations, we can provide additional documentation if needed.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <h3 class="faq-question">Where does my money go?</h3>
                     <div class="faq-answer">
-                        <p>Your donation will go directly to the charity you select.  We are committed to transparency and ensure that your contribution is used effectively to support their mission.</p>
+                        <p>Your donation will go directly to the charity you select. We are committed to transparency and ensure that at least 85% of your contribution is used for program services, with the remaining portion covering essential administrative and fundraising costs. We publish annual reports detailing how funds are used across all our programs.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <h3 class="faq-question">How can I contact you if I have more questions?</h3>
                     <div class="faq-answer">
-                        <p>Please visit our <a href="contact.html">Contact Us</a> page or email us at benovolentbeginnings@gmail.com.</p>
+                        <p>Please visit our <a href="contact.html">Contact Us</a> page or email us directly at benovolentbeginnings@gmail.com. Our donor support team is available Monday through Friday, 9am to 5pm, and will respond to all inquiries within 24 hours.</p>
                     </div>
                 </div>
-                </div>
 
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I make a recurring donation?</h3>
+                    <div class="faq-answer">
+                        <p>Yes, you can set up monthly, quarterly, or annual recurring donations. This option will be available during the checkout process after you select your donation amount. Recurring donations help us plan more effectively and sustain our programs long-term.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-<script>const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-
-        question.addEventListener('click', () => {
-            item.classList.toggle('active'); // Toggle the 'active' class
-        });
-    });</script>
-    </body>
-     <footer>
-        <p>&copy; [Benovolent] - All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Benevolent Beginnings - All Rights Reserved.</p>
         <ul>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
         </ul>
     </footer>
 
+    <script>
+        function setAmount(inputId, amount) {
+            document.getElementById(inputId).value = amount;
+            
+            // Remove active class from all buttons in the parent container
+            const buttons = document.getElementById(inputId).closest('.amount-options').querySelectorAll('.amount-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            // Add active class to the clicked button
+            event.target.classList.add('active');
+        }
+
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle the clicked item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
 </html>

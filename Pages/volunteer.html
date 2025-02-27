@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer - Benevolent Beginnings</title>
-    <link rel="stylesheet" href="Styles/volunteer.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Volunteer - Benevolent Beginnings</title>
+        <link rel="stylesheet" href="Styles/volunteer.css">
 </head>
 <body>
     <header>
         <nav>
+            <div class="logo-container">
+                <img src="../Assets/logo-removebg-preview.png" alt="Benevolent Beginnings Logo">
+                <h1>Benevolent Beginnings</h1>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -17,67 +21,145 @@
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        
-        <div class="logo-container">
-            <img src="../Assets/logo-removebg-preview.png" alt="Charity Logo">
-            <h1>Benevolent Beginnings</h1>
-        </div>
-        
-        <p>Making a Difference in the World</p>
     </header>
 
-    <main>
-        <section id="volunteer-form">
-            <h2>Become a Volunteer</h2>
-            <p>Join our team and help us make a positive impact!</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Join Our Community of Changemakers</h2>
+            <p>Lend your time, skills, and passion to make a meaningful difference in the lives of those who need it most.</p>
+        </div>
+    </section>
 
-            <form action="process_volunteer.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
+    <!-- Volunteer Form Section -->
+    <section class="volunteer-section">
+        <div class="volunteer-container">
+            <div class="volunteer-info">
+                <h2>Why Volunteer With Us?</h2>
+                <p>At Benevolent Beginnings, volunteers are the heart of our organization. Your dedication and compassion drive our mission forward and help us create lasting positive change in our communities.</p>
+                
+                <p>Whether you can offer a few hours a week or want to participate in special events, your contribution matters and will have a direct impact on those we serve.</p>
+                
+                <div class="volunteer-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            ❤️
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Make a Real Impact</h3>
+                            <p>Help transform lives through direct service and support to vulnerable communities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            🔄
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Flexible Opportunities</h3>
+                            <p>Choose from a variety of roles that match your skills, interests, and availability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            🌟
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Develop New Skills</h3>
+                            <p>Gain valuable experience and learn new abilities that benefit your personal and professional life.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            👥
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Join a Community</h3>
+                            <p>Connect with like-minded individuals who share your passion for making a difference.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="volunteer-form">
+                <h2>Become a Volunteer</h2>
+                <p>Fill out the form below to join our team of dedicated volunteers.</p>
+                
+                <form action="process_volunteer.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="18" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" class="form-control" required>
+                                <option value="">Select an option</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interests">Skills & Interests</label>
+                        <textarea id="interests" name="interests" class="form-control" placeholder="What skills can you bring to our organization? What are your interests?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <textarea id="availability" name="availability" class="form-control" placeholder="Which days and times are you typically available to volunteer?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="motivation">Why do you want to volunteer with us?</label>
+                        <textarea id="motivation" name="motivation" class="form-control"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                    
+                    <p class="form-note">Thank you for your interest in volunteering. We'll contact you within 3-5 business days.</p>
+                </form>
+            </div>
+        </div>
+    </section>
 
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" min="18" required><br><br>
-
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select><br><br>
-
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required><br><br>
-
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required><br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-
-                <label for="interests">Interests/Skills:</label>
-                <textarea id="interests" name="interests" rows="4" cols="50"></textarea><br><br>
-
-                <label for="availability">Availability:</label>
-                <textarea id="availability" name="availability" rows="4" cols="50" placeholder="Days and times you are available"></textarea><br><br>
-
-                <label for="experience">Relevant Experience:</label>
-                <textarea id="experience" name="experience" rows="4" cols="50"></textarea><br><br>
-
-                <label for="motivation">Why do you want to volunteer?</label>
-                <textarea id="motivation" name="motivation" rows="4" cols="50"></textarea><br><br>
-
-                <button type="submit">Submit Application</button>
-            </form>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; Benevolent Beginnings - All Rights Reserved.</p>
+        <p>&copy; 2025 Benevolent Beginnings - All Rights Reserved.</p>
         <ul>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
         </ul>
     </footer>
-
 </body>
 </html>

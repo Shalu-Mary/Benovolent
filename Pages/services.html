@@ -7,62 +7,72 @@
     <link rel="stylesheet" href="Styles/services.css">
 </head>
 <body>
-    <div class="background-image"> 
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
-            <h1>Benovolent Beginings</h1> 
-            <p>Making a Difference in the World</p>
-        </header>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="../Assets/logo-removebg-preview.png" alt="Benevolent Beginnings Logo">
+                <h1>Benevolent Beginnings</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
-            <section id="services">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>How We Can Help</h2>
+            <p>Discover the various ways we're working to make a difference in our community.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <main>
+        <section class="services">
+            <div class="container">
                 <h2>Our Services</h2>
                 <div class="service-grid">
                     <div class="service">
-                        <img src="../Assets/donation.jpeg" alt="Donation"> 
-                        <h3>Donations</h3>
-                        <p>Support our mission with a financial contribution.</p>
-                        <a href="donations.html" class="btn">Donate Now</a> 
+                        <img src="../Assets/donation.jpeg" alt="Donation">
+                        <div class="service-content">
+                            <h3>Donations</h3>
+                            <p>Support our mission with a financial contribution that helps fund our community programs and initiatives.</p>
+                            <a href="donations.html" class="btn">Donate Now</a>
+                        </div>
                     </div>
                     <div class="service">
-                        <img src="../Assets/shelter.jpg" alt="Shelter"> 
-                        <h3>Find Shelter</h3>
-                        <p>Locate emergency shelters and support services for those in need.</p>
-                        <a href="findshelter.html" class="btn">Find Shelters</a> 
+                        <img src="../Assets/shelter.jpg" alt="Shelter">
+                        <div class="service-content">
+                            <h3>Find Shelter</h3>
+                            <p>Locate emergency shelters and support services for those in need of temporary housing and assistance.</p>
+                            <a href="findshelter.html" class="btn">Find Shelters</a>
+                        </div>
                     </div>
                     <div class="service">
-                        <img src="../Assets/animalrescue.jpeg" alt="Animal Rescue"> 
-                        <h3>Animal Rescue</h3>
-                        <p>Learn about our animal rescue programs and how to help.</p>
-                        <a href="animal-rescue.html" class="btn">Learn More</a> 
-                    </div>
-                    <div class="service">
-                        <img src="../Assets/volunteer.jpeg" alt="Volunteer"> 
-                        <h3>Volunteer</h3>
-                        <p>Join our team of dedicated volunteers and make a difference.</p>
-                        <a href="volunteer.html" class="btn">Volunteer Now</a> 
+                        <img src="../Assets/volunteer.jpeg" alt="Volunteer">
+                        <div class="service-content">
+                            <h3>Volunteer</h3>
+                            <p>Join our team of dedicated volunteers and make a meaningful impact in your community through service.</p>
+                            <a href="volunteer.html" class="btn">Volunteer Now</a>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
 
-        <footer>
-            <p>&copy; [Benovolent] - All Rights Reserved.</p>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
-        </footer>
-
-    </div>
-
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Benevolent Beginnings - All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
 </body>
 </html>

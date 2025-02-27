@@ -4,26 +4,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Double Slider Login / Registration Form</title>
+  <title>Benevolent Beginnings - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
   <link rel="stylesheet" href="login.css">
-  <style></style>
 </head>
 <body>
-    
-<body>
-   
   <div class="container" id="container">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <a href="../Pages/index.html">
+        <div class="logo-container">
+          <img src="../Assets/logo-removebg-preview.png" alt="Benevolent Beginnings Logo">
+          <h1>Benevolent Beginnings</h1>
+        </div>
+      </a>
+    </div>
 
     <div class="form-container register-container">
       <form action="#">
-        
-        <h1>Register </h1>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
+        <h1>Join Our Community</h1>
+        <p>Create an account to track your donations and get involved</p>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
         <input type="password" placeholder="Password">
-        <button>Register</button>
-        <span>or use your account</span>
+        <button>Sign Up</button>
+        <span>Or register with</span>
         <div class="social-container">
           <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
           <a href="#" class="social"><i class="lni lni-google"></i></a>
@@ -34,20 +40,23 @@
 
     <div class="form-container login-container">
       <form action="#">
-        <h1>Login </h1>
-        <input type="email" placeholder="Email">
+        <span>  </span>
+        <span>  </span>
+        <h1>Welcome Back</h1>
+        <p>Login to access your account and continue making a difference</p>
+        <input type="email" placeholder="Email Address">
         <input type="password" placeholder="Password">
         <div class="content">
           <div class="checkbox">
-            <input type="checkbox" name="checkbox" id="checkbox">
-            <label>Remember me</label>
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember me</label>
           </div>
           <div class="pass-link">
             <a href="#">Forgot password?</a>
           </div>
         </div>
         <button>Login</button>
-        <span>or use your account</span>
+        <span>Or sign in with</span>
         <div class="social-container">
           <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
           <a href="#" class="social"><i class="lni lni-google"></i></a>
@@ -59,25 +68,25 @@
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-left">
-          <h1 class="title">Hello <br> User</h1>
-          <p>if Yout have an account, login here </p>
-          <button class="ghost" id="login">Login
+          <h2>Welcome Back!</h2>
+          <p>Continue your journey of compassion and support by logging into your account</p>
+          <button class="ghost" id="login">
+            Login
             <i class="lni lni-arrow-left login"></i>
           </button>
         </div>
         <div class="overlay-panel overlay-right">
-          <h1 class="title">Start your <br> journey now</h1>
-          <p>if you don't have an account yet, join us and start your journey.</p>
-          <button class="ghost" id="register">Register
+          <h2>Join Our Mission</h2>
+          <p>Sign up to become part of our community and help us create a world where everyone has the opportunity to thrive</p>
+          <button class="ghost" id="register">
+            Register
             <i class="lni lni-arrow-right register"></i>
           </button>
         </div>
       </div>
     </div>
-
   </div>
 
-  <script src="../Assets/script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

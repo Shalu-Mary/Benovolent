@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Chat | Benevolent Beginnings</title>
+    <link rel="stylesheet" href="Styles/indexstyle.css">
+    <link rel="stylesheet" href="Styles/chatbot.css">
+    <script src="Scripts/chatbot.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="../Assets/logo-removebg-preview.png" alt="Benevolent Beginnings Logo">
+                <h1>Benevolent Beginnings</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Stats.html">Stats</a></li>
+                <li><a href="chatbot.html" class="active">Support Chat</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="chatbot-container">
+        <section class="chat-header">
+            <h2>Benevolent Support Assistant</h2>
+            <p>Ask us anything about our services, donations, or how you can help!</p>
+        </section>
+
+        <section class="chat-box">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <img src="../Assets/logo-removebg-preview.png" alt="Bot Avatar">
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I'm your Benevolent Beginnings assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+                <button id="sendButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="quick-questions">
+            <h3>Common Questions</h3>
+            <div class="question-buttons">
+                <button class="question-btn" data-question="How can I donate?">How can I donate?</button>
+                <button class="question-btn" data-question="What programs do you offer?">What programs do you offer?</button>
+                <button class="question-btn" data-question="How can I volunteer?">How can I volunteer?</button>
+                <button class="question-btn" data-question="Where do my donations go?">Where do my donations go?</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Benevolent Beginnings - All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

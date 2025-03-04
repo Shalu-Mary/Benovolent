@@ -4,8 +4,47 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Find Shelter - Benevolent Beginnings</title>
-    <link rel="stylesheet" href="Styles/findshelter.css">
-</head>
+        <link rel="stylesheet" href="Styles/findshelter.css">
+        <style>
+            /* Map styles */
+            #map-container {
+                width: 100%;
+                height: 400px;
+                margin: 20px 0;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            #map {
+                width: 100%;
+                height: 100%;
+            }
+            .info-window {
+                padding: 5px;
+                max-width: 200px;
+            }
+            .info-window h3 {
+                margin-top: 0;
+                color: #3d8b40;
+                font-size: 16px;
+            }
+            .info-window p {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+            .info-window .directions {
+                display: inline-block;
+                background-color: #3d8b40;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                text-decoration: none;
+                margin-top: 8px;
+                font-size: 12px;
+                text-align: center;
+            }
+        </style>
+    </head>
 <body>
     <header>
         <nav>
@@ -37,7 +76,11 @@
         <section id="references">
             <div class="container">
                 <h2>Available Resources</h2>
-                <img src="../Assets/references.jpg" alt="References">
+                
+                <!-- Map replaces the image -->
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
                 
                 <!-- Filter Controls -->
                 <div class="filter-controls">
@@ -153,8 +196,194 @@
     </footer>
 
     <script>
-        // Filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        // Resource locations with coordinates
+        const resources = [
+            {
+                type: "Shelter",
+                name: "Hope Shelter",
+                location: "Kochi",
+                contact: "9834512912",
+                lat: 9.9312,
+                lng: 76.2673
+            },
+            {
+                type: "Hospital",
+                name: "Animal Hospital",
+                location: "Kannur",
+                contact: "8734569213",
+                lat: 11.8745,
+                lng: 75.3704
+            },
+            {
+                type: "Clinic",
+                name: "City Clinic",
+                location: "Mumbai",
+                contact: "7893521875",
+                lat: 19.0760,
+                lng: 72.8777
+            },
+            {
+                type: "Shelter",
+                name: "Paws Haven",
+                location: "Trivandrum",
+                contact: "9854812002",
+                lat: 8.5241,
+                lng: 76.9366
+            },
+            {
+                type: "Hospital",
+                name: "Pet Hospital",
+                location: "Chennai",
+                contact: "9453782315",
+                lat: 13.0827,
+                lng: 80.2707
+            },
+            {
+                type: "Clinic",
+                name: "Town Clinic",
+                location: "Selam",
+                contact: "7893450132",
+                lat: 11.6643,
+                lng: 78.1460
+            },
+            {
+                type: "Shelter",
+                name: "Kindred Hearts",
+                location: "Bangalore",
+                contact: "9834672381",
+                lat: 12.9716,
+                lng: 77.5946
+            },
+            {
+                type: "Hospital",
+                name: "Vet Clinic",
+                location: "Wayanad",
+                contact: "9876543210",
+                lat: 11.6854,
+                lng: 76.1320
+            },
+            {
+                type: "Clinic",
+                name: "Local Clinic",
+                location: "Kolkata",
+                contact: "9411144796",
+                lat: 22.5726,
+                lng: 88.3639
+            },
+            {
+                type: "Shelter",
+                name: "Safe Haven",
+                location: "Madurai",
+                contact: "8711002741",
+                lat: 9.9252,
+                lng: 78.1198
+            }
+        ];
+
+        let map;
+        let markers = [];
+        let infoWindow;
+
+        // Initialize Google Maps
+        function initMap() {
+            // Center on India
+            const india = { lat: 20.5937, lng: 78.9629 };
+            
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 5,
+                center: india,
+                mapTypeControl: true,
+                streetViewControl: false,
+                fullscreenControl: true,
+                zoomControl: true,
+            });
+
+            infoWindow = new google.maps.InfoWindow();
+            
+            // Add markers for all resources
+            addMarkers(resources);
+            
+            // Setup filter functionality after map is initialized
+            setupFilters();
+        }
+
+        // Add markers to the map
+        function addMarkers(resources) {
+            // Clear existing markers
+            clearMarkers();
+            
+            // Add new markers
+            resources.forEach(resource => {
+                const marker = new google.maps.Marker({
+                    position: { lat: resource.lat, lng: resource.lng },
+                    map: map,
+                    title: resource.name,
+                    // Different icons for different types
+                    icon: getMarkerIcon(resource.type)
+                });
+                
+                // Add click event to open info window
+                marker.addListener("click", () => {
+                    const content = `
+                        <div class="info-window">
+                            <h3>${resource.name}</h3>
+                            <p><strong>Type:</strong> ${resource.type}</p>
+                            <p><strong>Location:</strong> ${resource.location}</p>
+                            <p><strong>Contact:</strong> ${resource.contact}</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=${resource.lat},${resource.lng}" 
+                               class="directions" target="_blank">Get Directions</a>
+                        </div>
+                    `;
+                    
+                    infoWindow.setContent(content);
+                    infoWindow.open(map, marker);
+                });
+                
+                markers.push(marker);
+            });
+            
+            // If there are markers, fit bounds to show all of them
+            if (markers.length > 0) {
+                const bounds = new google.maps.LatLngBounds();
+                markers.forEach(marker => bounds.extend(marker.getPosition()));
+                map.fitBounds(bounds);
+                
+                // Don't zoom in too far
+                const listener = google.maps.event.addListener(map, "idle", () => {
+                    if (map.getZoom() > 12) map.setZoom(12);
+                    google.maps.event.removeListener(listener);
+                });
+            }
+        }
+        
+        // Get marker icon based on type
+        function getMarkerIcon(type) {
+            switch(type) {
+                case 'Shelter':
+                    return {
+                        url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                    };
+                case 'Hospital':
+                    return {
+                        url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                    };
+                case 'Clinic':
+                    return {
+                        url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                    };
+                default:
+                    return null;
+            }
+        }
+        
+        // Clear all markers from the map
+        function clearMarkers() {
+            markers.forEach(marker => marker.setMap(null));
+            markers = [];
+        }
+        
+        // Setup filter functionality
+        function setupFilters() {
             const typeFilter = document.getElementById('type-filter');
             const locationFilter = document.getElementById('location-filter');
             const resetButton = document.getElementById('reset-filters');
@@ -165,6 +394,7 @@
                 const typeValue = typeFilter.value;
                 const locationValue = locationFilter.value;
                 
+                // Filter table rows
                 rows.forEach(row => {
                     const type = row.cells[0].textContent;
                     const location = row.cells[2].textContent;
@@ -178,6 +408,16 @@
                         row.style.display = 'none';
                     }
                 });
+                
+                // Filter map markers
+                const filteredResources = resources.filter(resource => {
+                    const typeMatch = typeValue === 'all' || resource.type === typeValue;
+                    const locationMatch = locationValue === 'all' || resource.location === locationValue;
+                    return typeMatch && locationMatch;
+                });
+                
+                // Update map with filtered resources
+                addMarkers(filteredResources);
             }
             
             typeFilter.addEventListener('change', applyFilters);
@@ -187,7 +427,18 @@
                 typeFilter.value = 'all';
                 locationFilter.value = 'all';
                 rows.forEach(row => row.style.display = '');
+                addMarkers(resources);
             });
+        }
+        
+        // Load Google Maps API script after page content is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create and load the Google Maps script
+            const script = document.createElement('script');
+            script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDcnEMLWqK7p9UE1edyc_NxaKDaxq_bNZQ&callback=initMap";
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
         });
     </script>
 </body>

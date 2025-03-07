@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - Benevolent Beginnings</title>
     <link rel="stylesheet" href="Styles/donations.css">
+    <!-- Add Razorpay JavaScript SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
     <header>
@@ -45,12 +47,12 @@
                         <div class="charity-content">
                             <h3>Helping Hands Trust</h3>
                             <p>Providing essential resources and support to underprivileged communities through immediate aid and long-term development programs.</p>
-                            <form action="process_donation.php" method="POST">
+                            <form class="donation-form" data-charity="Helping Hands Trust">
                                 <label for="hh-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 100)">₹100</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 200)">₹200</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('hh-amount', 500)">₹500</button>
+                                    <button type="button" class="amount-btn" data-amount="100" data-input="hh-amount">₹100</button>
+                                    <button type="button" class="amount-btn" data-amount="200" data-input="hh-amount">₹200</button>
+                                    <button type="button" class="amount-btn" data-amount="500" data-input="hh-amount">₹500</button>
                                     <input type="number" id="hh-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -63,12 +65,12 @@
                         <div class="charity-content">
                             <h3>Animal Rescue League</h3>
                             <p>Rescuing and rehabilitating abandoned and neglected animals, providing medical care, shelter, and finding loving forever homes.</p>
-                            <form action="process_donation.php" method="POST">
+                            <form class="donation-form" data-charity="Animal Rescue League">
                                 <label for="arl-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 100)">₹100</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 200)">₹200</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('arl-amount', 500)">₹500</button>
+                                    <button type="button" class="amount-btn" data-amount="100" data-input="arl-amount">₹100</button>
+                                    <button type="button" class="amount-btn" data-amount="200" data-input="arl-amount">₹200</button>
+                                    <button type="button" class="amount-btn" data-amount="500" data-input="arl-amount">₹500</button>
                                     <input type="number" id="arl-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -81,12 +83,12 @@
                         <div class="charity-content">
                             <h3>Education for All</h3>
                             <p>Empowering children through access to quality education, providing school supplies, scholarships, and building learning centers in underserved areas.</p>
-                            <form action="process_donation.php" method="POST">
+                            <form class="donation-form" data-charity="Education for All">
                                 <label for="efa-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 100)">₹100</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 200)">₹200</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('efa-amount', 500)">₹500</button>
+                                    <button type="button" class="amount-btn" data-amount="100" data-input="efa-amount">₹100</button>
+                                    <button type="button" class="amount-btn" data-amount="200" data-input="efa-amount">₹200</button>
+                                    <button type="button" class="amount-btn" data-amount="500" data-input="efa-amount">₹500</button>
                                     <input type="number" id="efa-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -99,12 +101,12 @@
                         <div class="charity-content">
                             <h3>Disaster Relief Fund</h3>
                             <p>Providing immediate aid and long-term support to communities affected by natural disasters, including food, shelter, medical assistance, and rebuilding efforts.</p>
-                            <form action="process_donation.php" method="POST">
+                            <form class="donation-form" data-charity="Disaster Relief Fund">
                                 <label for="dr-amount">Select an amount:</label>
                                 <div class="amount-options">
-                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 100)">₹100</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 200)">₹200</button>
-                                    <button type="button" class="amount-btn" onclick="setAmount('dr-amount', 500)">₹500</button>
+                                    <button type="button" class="amount-btn" data-amount="100" data-input="dr-amount">₹100</button>
+                                    <button type="button" class="amount-btn" data-amount="200" data-input="dr-amount">₹200</button>
+                                    <button type="button" class="amount-btn" data-amount="500" data-input="dr-amount">₹500</button>
                                     <input type="number" id="dr-amount" name="amount" min="1" placeholder="Custom" required>
                                 </div>
                                 <button type="submit" class="donate-btn">Donate Now</button>
@@ -123,14 +125,14 @@
                 <div class="faq-item">
                     <h3 class="faq-question">How can I donate?</h3>
                     <div class="faq-answer">
-                        <p>You can donate by selecting a charity from the options above and choosing a predefined amount or entering a custom amount. Then, click the "Donate Now" button to proceed to our secure payment processing page where you can complete your donation.</p>
+                        <p>You can donate by selecting a charity from the options above and choosing a predefined amount or entering a custom amount. Then, click the "Donate Now" button to proceed to our secure payment processing page where you can complete your donation using Razorpay, our trusted payment partner.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <h3 class="faq-question">What payment methods do you accept?</h3>
                     <div class="faq-answer">
-                        <p>We accept a variety of payment methods including all major credit cards (Visa, MasterCard, American Express, Discover), debit cards, PayPal, and bank transfers. All payments are processed securely to protect your information.</p>
+                        <p>Through our payment gateway Razorpay, we accept credit/debit cards, UPI, net banking, and popular wallets. All payments are processed securely to protect your information.</p>
                     </div>
                 </div>
 
@@ -147,7 +149,6 @@
                         <p>Your donation will go directly to the charity you select. We are committed to transparency and ensure that at least 85% of your contribution is used for program services, with the remaining portion covering essential administrative and fundraising costs. We publish annual reports detailing how funds are used across all our programs.</p>
                     </div>
                 </div>
-
 
                 <div class="faq-item">
                     <h3 class="faq-question">Can I make a recurring donation?</h3>
@@ -194,13 +195,13 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="donor-phone" class="required">Phone Number</label>
-                        <input type="tel" id="donor-phone" name="donor-phone" required>
+                        <label for="donor-email" class="required">Email Address</label>
+                        <input type="email" id="donor-email" name="donor-email" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="donor-email" class="required">Email Address</label>
-                        <input type="email" id="donor-email" name="donor-email" required>
+                        <label for="donor-phone" class="required">Phone Number</label>
+                        <input type="tel" id="donor-phone" name="donor-phone" required>
                     </div>
                     
                     <div class="form-group">
@@ -212,31 +213,18 @@
                         </select>
                     </div>
                     
-                    <div class="payment-methods">
-                        <label class="required">Select Payment Method</label>
-                        <div class="payment-options">
-                            <button type="button" class="payment-button" data-payment="visa">
-                                <img src="../Assets/visa-cards.jpeg" alt="Visa" onerror="this.src='/api/placeholder/100/30'; this.alt='Visa Card'">
-                            </button>
-                            <button type="button" class="payment-button" data-payment="mastercard">
-                                <img src="../Assets/mastercards.png" alt="Mastercard" onerror="this.src='/api/placeholder/100/30'; this.alt='Master Card'">
-                            </button>
-                            <button type="button" class="payment-button" data-payment="paypal">
-                                <img src="../Assets/paypal.jpg" alt="PayPal" onerror="this.src='/api/placeholder/100/30'; this.alt='PayPal'">
-                            </button>
-                            <button type="button" class="payment-button" data-payment="applepay">
-                                <img src="../Assets/applepay.png" alt="Apple Pay" onerror="this.src='/api/placeholder/100/30'; this.alt='Apple Pay'">
-                            </button>
-                        </div>
-                        <input type="hidden" id="payment-method" name="payment-method" required>
+                    <div id="razorpay-badge" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                        <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay" style="height: 30px; margin-right: 10px;">
+                        <span style="color: #072654; font-weight: bold;">Secure Payments by Razorpay</span>
                     </div>
                     
-                    <button type="submit" class="make-payment-btn">Make Payment</button>
+                    <button type="submit" class="make-payment-btn">Proceed to Payment</button>
                 </form>
                 
                 <div class="thank-you-message" id="thank-you-message">
                     <h3>Thank You for Your Donation!</h3>
                     <p>Your generosity makes a real difference. We've sent a confirmation to your email with the details of your donation.</p>
+                    <p id="payment-id-display" style="font-size: 14px; color: #666; margin-top: 10px;"></p>
                     <button class="back-btn" id="back-to-site">Back to Homepage</button>
                 </div>
             </div>
@@ -244,19 +232,12 @@
     </div>
 
     <script>
-        function setAmount(inputId, amount) {
-            document.getElementById(inputId).value = amount;
-            
-            // Remove active class from all buttons in the parent container
-            const buttons = document.getElementById(inputId).closest('.amount-options').querySelectorAll('.amount-btn');
-            buttons.forEach(button => button.classList.remove('active'));
-            
-            // Add active class to the clicked button
-            event.target.classList.add('active');
-        }
-
-        // FAQ functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize variables to store donation information
+            let currentCharity = '';
+            let donationAmount = 0;
+            
+            // FAQ functionality
             const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {
@@ -275,32 +256,63 @@
                 });
             });
 
-            // Donation modal functionality
+            // Handle amount button clicks
+            const amountButtons = document.querySelectorAll('.amount-btn');
+            amountButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const amount = this.getAttribute('data-amount');
+                    const inputId = this.getAttribute('data-input');
+                    const inputField = document.getElementById(inputId);
+                    
+                    if (inputField) {
+                        inputField.value = amount;
+                    }
+                    
+                    // Remove active class from all buttons in this form
+                    const allButtonsInForm = this.closest('.amount-options').querySelectorAll('.amount-btn');
+                    allButtonsInForm.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                });
+            });
+
+            // Modal functionality
             const modal = document.getElementById("donationModal");
             const closeModal = document.querySelector(".close-modal");
-            const donateButtons = document.querySelectorAll(".donate-btn");
             const donationForm = document.getElementById("donation-form");
             const thankYouMessage = document.getElementById("thank-you-message");
             const backToSiteBtn = document.getElementById("back-to-site");
-            const paymentButtons = document.querySelectorAll(".payment-button");
-            const paymentMethodInput = document.getElementById("payment-method");
+
+            // Hide thank you message initially
+            if (thankYouMessage) {
+                thankYouMessage.style.display = "none";
+            }
+
+            // Handle initial donate button clicks
+            const donationForms = document.querySelectorAll('.donation-form');
             
-            // Open modal when any Donate Now button is clicked
-            donateButtons.forEach(button => {
-                button.addEventListener("click", function(e) {
+            donationForms.forEach(form => {
+                form.addEventListener("submit", function(e) {
                     e.preventDefault();
                     
-                    // Get charity name from the closest charity div
-                    const charityDiv = this.closest('.charity');
-                    const charityName = charityDiv.querySelector('h3').textContent;
+                    // Get charity name
+                    currentCharity = this.getAttribute('data-charity');
                     
                     // Get donation amount
-                    const amountInput = charityDiv.querySelector('input[type="number"]');
-                    const amount = amountInput.value || "0";
+                    const amountInput = this.querySelector('input[type="number"]');
+                    donationAmount = amountInput.value || "0";
+                    
+                    if (!donationAmount || donationAmount <= 0) {
+                        alert("Please enter a valid donation amount.");
+                        return;
+                    }
                     
                     // Update modal with details
-                    document.getElementById("selected-charity").textContent = charityName;
-                    document.getElementById("donation-amount").textContent = "$" + parseFloat(amount).toFixed(2);
+                    document.getElementById("selected-charity").textContent = currentCharity;
+                    document.getElementById("donation-amount").textContent = "₹" + parseFloat(donationAmount).toFixed(2);
                     
                     // Show modal
                     modal.style.display = "block";
@@ -309,18 +321,15 @@
                     donationForm.reset();
                     donationForm.style.display = "block";
                     thankYouMessage.style.display = "none";
-                    
-                    // Remove selected class from payment buttons
-                    paymentButtons.forEach(btn => {
-                        btn.classList.remove('selected');
-                    });
                 });
             });
             
             // Close modal when clicking X
-            closeModal.addEventListener("click", function() {
-                modal.style.display = "none";
-            });
+            if (closeModal) {
+                closeModal.addEventListener("click", function() {
+                    modal.style.display = "none";
+                });
+            }
             
             // Close modal when clicking outside the modal content
             window.addEventListener("click", function(event) {
@@ -329,52 +338,83 @@
                 }
             });
             
-            // Payment method selection
-            paymentButtons.forEach(button => {
-                button.addEventListener("click", function() {
-                    // Remove selected class from all buttons
-                    paymentButtons.forEach(btn => {
-                        btn.classList.remove('selected');
-                    });
+            // Main donation form submission
+            if (donationForm) {
+                donationForm.addEventListener("submit", function(e) {
+                    e.preventDefault();
                     
-                    // Add selected class to clicked button
-                    this.classList.add('selected');
+                    // Get donor information
+                    const donorName = document.getElementById("donor-name").value;
+                    const donorEmail = document.getElementById("donor-email").value;
+                    const donorPhone = document.getElementById("donor-phone").value;
+                    const donorType = document.getElementById("donor-type").value;
                     
-                    // Set payment method value in the hidden input
-                    paymentMethodInput.value = this.getAttribute('data-payment');
+                    // Basic validation
+                    if (!donorName || !donorEmail || !donorPhone || !donorType) {
+                        alert("Please fill in all required fields.");
+                        return;
+                    }
+                    
+                    // Direct Razorpay implementation (simplest approach)
+                    const options = {
+                        key: "rzp_test_W7yno75naR3ZIl", // Replace with your Razorpay Key ID
+                        amount: parseFloat(donationAmount) * 100, // Amount in paise
+                        currency: "INR",
+                        name: "Benevolent Beginnings",
+                        description: `Donation to ${currentCharity}`,
+                        image: "../Assets/logo-removebg-preview.png",
+                        handler: function(response) {
+                            // Payment was successful
+                            console.log("Payment successful:", response);
+                            
+                            // Hide form and show thank you message
+                            if (donationForm && thankYouMessage) {
+                                donationForm.style.display = "none";
+                                thankYouMessage.style.display = "block";
+                                
+                                // Display payment ID if available
+                                if (response.razorpay_payment_id) {
+                                    document.getElementById("payment-id-display").textContent = 
+                                        `Payment ID: ${response.razorpay_payment_id}`;
+                                }
+                            }
+                        },
+                        prefill: {
+                            name: donorName,
+                            email: donorEmail,
+                            contact: donorPhone
+                        },
+                        notes: {
+                            charity: currentCharity,
+                            donor_type: donorType
+                        },
+                        theme: {
+                            color: "#3d8b40"
+                        }
+                    };
+                    
+                    try {
+                        const rzp = new Razorpay(options);
+                        
+                        rzp.on('payment.failed', function(response) {
+                            console.error("Payment failed:", response.error);
+                            alert("Payment failed. " + response.error.description);
+                        });
+                        
+                        rzp.open();
+                    } catch (error) {
+                        console.error("Razorpay error:", error);
+                        alert("There was an error opening the payment gateway. Please try again.");
+                    }
                 });
-            });
-            
-            // Form submission
-            donationForm.addEventListener("submit", function(e) {
-                e.preventDefault();
-                
-                // Basic validation
-                const name = document.getElementById("donor-name").value;
-                const phone = document.getElementById("donor-phone").value;
-                const email = document.getElementById("donor-email").value;
-                const donorType = document.getElementById("donor-type").value;
-                const paymentMethod = paymentMethodInput.value;
-                
-                if (!name || !phone || !email || !donorType || !paymentMethod) {
-                    alert("Please fill in all required fields and select a payment method.");
-                    return;
-                }
-                
-                // Hide form and show thank you message
-                donationForm.style.display = "none";
-                thankYouMessage.style.display = "block";
-                
-                // In a real application, you would process the payment here
-                // and send the data to your server
-            });
+            }
             
             // Back to site button
-            backToSiteBtn.addEventListener("click", function() {
-                modal.style.display = "none";
-                // Optionally redirect to homepage
-                // window.location.href = "index.html";
-            });
+            if (backToSiteBtn) {
+                backToSiteBtn.addEventListener("click", function() {
+                    modal.style.display = "none";
+                });
+            }
         });
     </script>
 </body>

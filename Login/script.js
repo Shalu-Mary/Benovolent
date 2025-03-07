@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const loginButton = document.getElementById("login");
   const container = document.getElementById("container");
   const logoText = document.querySelector('.logo-container h1');
+  const loginForm = document.querySelector('.login-container form');
+  const signUpForm = document.querySelector('.register-container form');
 
   // Panel switching animation
   registerButton.addEventListener("click", () => {
@@ -15,6 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
     container.classList.remove("right-panel-active");
     // Change logo text color back to green/primary when in login mode
     logoText.classList.remove('white-text');
+  });
+
+  // Add form submission handlers
+  loginForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default form submission
+    window.location.href = "../Pages/index.html"; // Redirect to home page
+  });
+
+  signUpForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default form submission
+    window.location.href = "../Pages/index.html"; // Redirect to home page after signup
   });
 
   // Add smooth transitions for form elements
